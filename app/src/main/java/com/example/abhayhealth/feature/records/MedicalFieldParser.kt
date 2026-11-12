@@ -292,7 +292,7 @@ object MedicalFieldParser {
         return when {
             upper.contains("PRESCRIPTION") || upper.contains("RX") || upper.contains("TAB ") || upper.contains("CAP ") || upper.contains("SYP ") || upper.contains("DOSAGE") ->
                 "PRESCRIPTION"
-            upper.contains("PATHOLOGY") || upper.contains("BIOCHEMISTRY") || upper.contains("HAEMATOLOGY") || upper.contains("REFERENCE RANGE") || upper.contains("LABORATORY") || upper.contains("TEST REPORT") ->
+            upper.contains("PATHOLOGY") || upper.contains("BIOCHEMISTRY") || upper.contains("HAEMATOLOGY") || upper.contains("REFERENCE RANGE") || upper.contains("LABORATORY") || upper.contains("TEST REPORT") || upper.contains("DIAGNOSTICS") || upper.contains("COMPLETE BLOOD COUNT") || upper.contains("HEMOGLOBIN") || upper.contains("HAEMOGLOBIN") ->
                 "LAB_REPORT"
             upper.contains("X-RAY") || upper.contains("ULTRASOUND") || upper.contains("MRI") || upper.contains("CT SCAN") || upper.contains("SONOGRAPHY") ->
                 "IMAGING"
@@ -448,7 +448,10 @@ object MedicalFieldParser {
         val skipHeaders = setOf(
             "investigation", "investigations", "test", "test name", "parameter", "result", "results",
             "observed value", "units", "unit", "biological reference", "reference interval", "ref range",
-            "normal range", "method", "specimen", "page", "date", "patient", "doctor", "dr", "age", "gender", "sex"
+            "normal range", "method", "specimen", "page", "date", "patient", "doctor", "dr", "age", "gender", "sex",
+            "phone", "mobile", "tel", "fax", "pin", "zip", "reg", "bill", "receipt", "invoice",
+            "sample id", "lab no", "uhid", "mrn", "ip no", "op no", "ward", "bed", "floor", "room",
+            "printed", "collected", "received", "reported", "verified", "barcode"
         )
 
         for (line in lines) {

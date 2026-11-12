@@ -158,41 +158,45 @@ object PdfTextExtractor {
 
     private fun tryInflate(data: ByteArray): ByteArray? {
         // Try standard zlib inflater
+        var inflater: Inflater? = null
         try {
-            val inflater = Inflater(false)
+            inflater = Inflater(false)
             inflater.setInput(data)
             val buffer = ByteArray(8192)
             val out = ByteArrayOutputStream()
             while (!inflater.finished() && out.size() < MAX_STREAM_BYTES) {
                 val count = inflater.inflate(buffer)
                 if (count <= 0) {
-                    if (inflater.needsInput() || inflater.needsDictionary()) break
+                    break
                 }
                 out.write(buffer, 0, count)
             }
-            inflater.end()
             val result = out.toByteArray()
             if (result.isNotEmpty()) return result
         } catch (_: Throwable) {
+        } finally {
+            try { inflater?.end() } catch (_: Throwable) {}
         }
 
         // Try raw deflate (no zlib header)
+        var rawInflater: Inflater? = null
         try {
-            val inflater = Inflater(true)
-            inflater.setInput(data)
+            rawInflater = Inflater(true)
+            rawInflater.setInput(data)
             val buffer = ByteArray(8192)
             val out = ByteArrayOutputStream()
-            while (!inflater.finished() && out.size() < MAX_STREAM_BYTES) {
-                val count = inflater.inflate(buffer)
+            while (!rawInflater.finished() && out.size() < MAX_STREAM_BYTES) {
+                val count = rawInflater.inflate(buffer)
                 if (count <= 0) {
-                    if (inflater.needsInput() || inflater.needsDictionary()) break
+                    break
                 }
                 out.write(buffer, 0, count)
             }
-            inflater.end()
             val result = out.toByteArray()
             if (result.isNotEmpty()) return result
         } catch (_: Throwable) {
+        } finally {
+            try { rawInflater?.end() } catch (_: Throwable) {}
         }
 
         // Try InflaterInputStream
@@ -201,7 +205,7 @@ object PdfTextExtractor {
                 val out = ByteArrayOutputStream()
                 val buffer = ByteArray(8192)
                 var read: Int
-                while (input.read(buffer).also { read = it } != -1 && out.size() < MAX_STREAM_BYTES) {
+                while (input.read(buffer).also { read = it } > 0 && out.size() < MAX_STREAM_BYTES) {
                     out.write(buffer, 0, read)
                 }
                 val result = out.toByteArray()

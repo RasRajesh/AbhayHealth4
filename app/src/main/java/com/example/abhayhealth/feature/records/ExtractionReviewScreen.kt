@@ -50,6 +50,7 @@ import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -62,9 +63,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.DialogProperties
 import com.example.abhayhealth.R
 import com.example.abhayhealth.domain.model.ParsedMedicalResult
 import com.example.abhayhealth.domain.model.BiomarkerStatus
@@ -85,6 +88,7 @@ fun ExtractionReviewScreen(
     val testResults by viewModel.parsedResults.collectAsState()
     val parsedMedicines by viewModel.parsedMedicines.collectAsState()
     val isExtracting by viewModel.isExtracting.collectAsState()
+    val extractionProgress by viewModel.extractionProgress.collectAsState()
     val hasExtractionFailed by viewModel.hasExtractionFailed.collectAsState()
     val verifiedTestIds by viewModel.verifiedTestIds.collectAsState()
     val verifiedMedicineIds by viewModel.verifiedMedicineIds.collectAsState()
@@ -177,11 +181,22 @@ fun ExtractionReviewScreen(
     }
 
     if (isExtracting) {
+        val animatedProgress by animateFloatAsState(
+            targetValue = (extractionProgress.percentage.coerceIn(0, 100) / 100f),
+            label = "extraction_progress"
+        )
         AlertDialog(
-            onDismissRequest = { viewModel.cancelExtraction() },
+            onDismissRequest = { /* Do not abort extraction on outside tap or back press */ },
+            properties = DialogProperties(
+                dismissOnBackPress = false,
+                dismissOnClickOutside = false
+            ),
             confirmButton = {},
             dismissButton = {
-                TextButton(onClick = { viewModel.cancelExtraction() }) {
+                TextButton(
+                    onClick = { viewModel.cancelExtraction() },
+                    modifier = Modifier.testTag("cancel_extraction_button")
+                ) {
                     Text("Cancel Extraction")
                 }
             },
@@ -195,23 +210,59 @@ fun ExtractionReviewScreen(
                         strokeWidth = 2.5.dp,
                         color = MaterialTheme.colorScheme.primary
                     )
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = "Extracting Health Data...",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                        if (extractionProgress.totalPages > 0) {
+                            Text(
+                                text = "Page ${extractionProgress.currentPage.coerceAtLeast(1)} of ${extractionProgress.totalPages}",
+                                style = MaterialTheme.typography.labelMedium,
+                                color = MaterialTheme.colorScheme.primary
+                            )
+                        }
+                    }
                     Text(
-                        text = "Extracting Health Data...",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
+                        text = "${extractionProgress.percentage}%",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
                     )
                 }
             },
             text = {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Text(
-                        text = "Analyzing report text, recognizing biomarker measurements, and extracting prescribed medicines. Please wait...",
+                        text = extractionProgress.message,
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
-                    LinearProgressIndicator(
-                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp),
-                        color = MaterialTheme.colorScheme.primary
+                    if (extractionProgress.isIndeterminate) {
+                        LinearProgressIndicator(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(8.dp)
+                                .testTag("extraction_progress_bar"),
+                            color = MaterialTheme.colorScheme.primary,
+                            trackColor = MaterialTheme.colorScheme.surfaceVariant
+                        )
+                    } else {
+                        LinearProgressIndicator(
+                            progress = { animatedProgress },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(8.dp)
+                                .testTag("extraction_progress_bar"),
+                            color = MaterialTheme.colorScheme.primary,
+                            trackColor = MaterialTheme.colorScheme.surfaceVariant
+                        )
+                    }
+                    Text(
+                        text = "Please keep the app open. Multi-page reports are processed page by page without aborting.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
             }

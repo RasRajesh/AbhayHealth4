@@ -50,6 +50,9 @@ class ExtractionReviewViewModel(
     private val _isExtracting = MutableStateFlow(false)
     val isExtracting: StateFlow<Boolean> = _isExtracting.asStateFlow()
 
+    private val _extractionProgress = MutableStateFlow(ExtractionProgress())
+    val extractionProgress: StateFlow<ExtractionProgress> = _extractionProgress.asStateFlow()
+
     private val _hasExtractionFailed = MutableStateFlow(false)
     val hasExtractionFailed: StateFlow<Boolean> = _hasExtractionFailed.asStateFlow()
 
@@ -115,6 +118,9 @@ class ExtractionReviewViewModel(
     }
 
     fun loadRecordAndInfo(recordId: Long) {
+        if (_isExtracting.value && _selectedRecord.value?.id == recordId) {
+            return
+        }
         val uid = getCurrentUid()
 
         loadingJob?.cancel()
@@ -135,8 +141,10 @@ class ExtractionReviewViewModel(
             _extractedInfo.value = info
 
             if (info != null) {
-                val deserialized = MedicalFieldParser.deserializeResults(info.structuredResultsJson)
-                val meds = MedicalFieldParser.parsePrescriptionMedicines(info.rawText, uid)
+                val (deserialized, meds) = withContext(dispatcherProvider.default) {
+                    MedicalFieldParser.deserializeResults(info.structuredResultsJson) to
+                        MedicalFieldParser.parsePrescriptionMedicines(info.rawText, uid)
+                }
 
                 // If user has already reviewed the record or if it has valid extracted items, load them
                 if (info.reviewStatus != ExtractedMedicalInfo.STATUS_UNREVIEWED || deserialized.isNotEmpty() || meds.isNotEmpty()) {
@@ -147,12 +155,26 @@ class ExtractionReviewViewModel(
                 } else {
                     // Stale empty extraction from a previous run:
                     // If rawText already has valid medical content, parse it immediately without re-running heavy extraction
-                    if (info.rawText.isNotBlank() && !info.rawText.startsWith("Failed") && !info.rawText.startsWith("No readable") && !info.rawText.startsWith("Could not")) {
-                        val parsedAgain = MedicalFieldParser.parseTestResults(info.rawText)
-                        val medsAgain = MedicalFieldParser.parsePrescriptionMedicines(info.rawText, uid)
+                    val isErrorPlaceholder = info.rawText.startsWith("Failed") ||
+                        info.rawText.startsWith("No readable") ||
+                        info.rawText.startsWith("Could not") ||
+                        info.rawText.startsWith("Document extraction timed out") ||
+                        info.rawText.startsWith("Cannot render PDF") ||
+                        info.rawText.startsWith("Selected image") ||
+                        info.rawText.startsWith("Image processing failed") ||
+                        info.rawText.startsWith("Local document file")
+
+                    if (info.rawText.isNotBlank() && !isErrorPlaceholder) {
+                        val (parsedAgain, medsAgain, parsedDate) = withContext(dispatcherProvider.default) {
+                            Triple(
+                                MedicalFieldParser.parseTestResults(info.rawText),
+                                MedicalFieldParser.parsePrescriptionMedicines(info.rawText, uid),
+                                MedicalFieldParser.parseReportDate(info.rawText)
+                            )
+                        }
                         if (parsedAgain.isNotEmpty() || medsAgain.isNotEmpty()) {
                             _documentTitle.value = info.documentTitle.ifBlank { record.title }
-                            _reportDate.value = info.reportDate ?: (MedicalFieldParser.parseReportDate(info.rawText) ?: "")
+                            _reportDate.value = info.reportDate ?: (parsedDate ?: "")
                             _parsedResults.value = parsedAgain
                             _parsedMedicines.value = medsAgain
                             return@launch
@@ -241,11 +263,19 @@ class ExtractionReviewViewModel(
             _hasExtractionFailed.value = false
             _errorMessage.value = null
             _infoMessage.value = null
+            _extractionProgress.value = ExtractionProgress(
+                percentage = 5,
+                stage = ExtractionStage.INITIALIZING,
+                message = "Preparing document extraction...",
+                isIndeterminate = false
+            )
 
             try {
-                // 60 second watchdog so multi-page (8-12 page) OCR never aborts prematurely
-                val extraction = kotlinx.coroutines.withTimeoutOrNull(60_000L) {
-                    DocumentExtractionEngine.extractText(record)
+                // 180 second watchdog so multi-page (up to 12 page) OCR never aborts prematurely
+                val extraction = kotlinx.coroutines.withTimeoutOrNull(180_000L) {
+                    DocumentExtractionEngine.extractText(record) { progress ->
+                        _extractionProgress.value = progress
+                    }
                 }
 
                 if (extraction == null) {
@@ -271,10 +301,27 @@ class ExtractionReviewViewModel(
                 when (extraction) {
                     is ExtractionResult.Success -> {
                         val raw = extraction.rawText
-                        val title = MedicalFieldParser.parseDocumentTitle(raw, record.title)
-                        val date = MedicalFieldParser.parseReportDate(raw) ?: ""
-                        val results = MedicalFieldParser.parseTestResults(raw)
-                        val medicines = MedicalFieldParser.parsePrescriptionMedicines(raw, uid)
+                        _extractionProgress.value = _extractionProgress.value.copy(
+                            percentage = 88,
+                            stage = ExtractionStage.MEDICAL_PARSING,
+                            message = "Parsing lab parameters and prescriptions...",
+                            isIndeterminate = false
+                        )
+
+                        val (title, date, results, medicines) = withContext(dispatcherProvider.default) {
+                            val parsedTitle = MedicalFieldParser.parseDocumentTitle(raw, record.title)
+                            val parsedDate = MedicalFieldParser.parseReportDate(raw) ?: ""
+                            val parsedResults = MedicalFieldParser.parseTestResults(raw)
+                            val parsedMeds = MedicalFieldParser.parsePrescriptionMedicines(raw, uid)
+                            ParsedExtractionBundle(parsedTitle, parsedDate, parsedResults, parsedMeds)
+                        }
+
+                        _extractionProgress.value = _extractionProgress.value.copy(
+                            percentage = 95,
+                            stage = ExtractionStage.DATABASE_SAVE,
+                            message = "Saving extracted health data...",
+                            isIndeterminate = false
+                        )
 
                         val info = ExtractedMedicalInfo(
                             recordId = record.id,
@@ -291,6 +338,13 @@ class ExtractionReviewViewModel(
                         withContext(dispatcherProvider.io) {
                             medicalRecordRepository.saveExtractedInfo(info)
                         }
+
+                        _extractionProgress.value = _extractionProgress.value.copy(
+                            percentage = 100,
+                            stage = ExtractionStage.REVIEW_MAPPING,
+                            message = "Extraction complete!",
+                            isIndeterminate = false
+                        )
 
                         _documentTitle.value = title
                         _reportDate.value = date
@@ -337,6 +391,13 @@ class ExtractionReviewViewModel(
             }
         }
     }
+
+    private data class ParsedExtractionBundle(
+        val title: String,
+        val date: String,
+        val results: List<ParsedMedicalResult>,
+        val medicines: List<PrescriptionMedicationEntity>
+    )
 
     fun onTitleChanged(value: String) { _documentTitle.value = value }
     fun onDateChanged(value: String) { _reportDate.value = value }
