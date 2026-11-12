@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude local medical documents, database, and preferences from automatic cloud backup -->
+    <exclude domain="file" path="medical_records" />
+    <exclude domain="database" path="medical_records.db" />
+    <exclude domain="sharedpref" path="abhay_health_preferences.preferences_pb" />
+</full-backup-content>

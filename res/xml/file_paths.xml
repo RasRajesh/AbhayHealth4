@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path name="medical_records" path="medical_records/" />
+    <files-path name="reports" path="reports/" />
+    <cache-path name="reports_cache" path="reports/" />
+</paths>

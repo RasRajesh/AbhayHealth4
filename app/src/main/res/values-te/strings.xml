@@ -1,0 +1,287 @@
+<resources>
+    <string name="app_name">AbhayHealth</string>
+    <string name="app_tagline">మీ ఆరోగ్య ప్రయాణం, సురక్షితంగా అనుసంధానించబడింది.</string>
+
+    <!-- Navigation Labels -->
+    <string name="nav_home">హోమ్</string>
+    <string name="nav_ai_assistant">AI అసిస్టెంట్</string>
+    <string name="nav_records">రికార్డులు</string>
+    <string name="nav_trends">ట్రెండ్స్</string>
+    <string name="nav_medicines">మందులు</string>
+    <string name="nav_me">ప్రొఫైల్</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_loading">మీ సురక్షిత ఆరోగ్య వాతావరణం సిద్ధమవుతోంది…</string>
+
+    <!-- Onboarding Screen -->
+    <string name="onboarding_welcome">అభయ్ హెల్త్‌కు స్వాగతం</string>
+    <string name="onboarding_subtitle">మీ ఆరోగ్య ప్రయాణం, సురక్షితంగా అనుసంధానించబడింది.</string>
+    <string name="onboarding_feat_records_title">అమర్చబడిన వైద్య రికార్డులు</string>
+    <string name="onboarding_feat_records_desc">మీ వైద్య నివేదికలు, స్కాన్లు మరియు ల్యాబ్ ఫలితాలను మీ ఫోన్‌లో సురక్షితంగా భద్రపరచండి.</string>
+    <string name="onboarding_feat_meds_title">మందులు &amp; ప్రిస్క్రిప్షన్ ట్రాకర్</string>
+    <string name="onboarding_feat_meds_desc">ప్రిస్క్రిప్షన్‌లను నిర్వహించండి, రోజువారీ మందుల మోతాదును ట్రాక్ చేయండి మరియు సమయానికి జ్ఞాపికలను పొందండి.</string>
+    <string name="onboarding_feat_privacy_title">సంపూర్ణ గోప్యత &amp; స్థానిక నిల్వ</string>
+    <string name="onboarding_feat_privacy_desc">మీ ఆరోగ్య సమాచారం మీ ఫోన్‌లోనే ఉంటుంది, ఎటువంటి క్లౌడ్ ట్రాకింగ్ లేకుండా పూర్తి మీ నియంత్రణలో ఉంటుంది.</string>
+    <string name="onboarding_name_label">మీ పేరు (ఐచ్ఛికం)</string>
+    <string name="onboarding_name_placeholder">ఉదా. అనన్య శర్మ</string>
+    <string name="onboarding_get_started">ప్రారంభించండి</string>
+
+    <!-- Welcome / Account Entry Screen -->
+    <string name="welcome_title">అభయ్ హెల్త్‌లోకి సైన్ ఇన్ చేయండి</string>
+    <string name="welcome_desc">మొబైల్ OTP ద్వారా సురక్షిత ప్రవేశం. మీ వైద్య రికార్డులు మీ పరికరంలోనే భద్రంగా ఉంటాయి.</string>
+    <string name="welcome_btn_continue">మొబైల్ నంబర్‌తో కొనసాగండి</string>
+    <string name="welcome_privacy_notice">🔒 ఖాతా ప్రామాణీకరణ మీ మొబైల్ గుర్తింపును ధృవీకరిస్తుంది. మీ వ్యక్తిగత ఆరోగ్య పత్రాలు మరియు ప్రిస్క్రిప్షన్‌లు 100% మీ ఫోన్‌లోనే నిల్వ చేయబడతాయి.</string>
+
+    <!-- Enter Phone Screen -->
+    <string name="phone_title">మొబైల్ నంబర్‌ను నమోదు చేయండి</string>
+    <string name="phone_subtitle">మీ మొబైల్ నంబర్‌ను ధృవీకరించడానికి మేము 6-అంకెల OTP కోడ్‌ను పంపుతాము.</string>
+    <string name="phone_country_label">దేశం కోడ్</string>
+    <string name="phone_number_label">మొబైల్ నంబర్</string>
+    <string name="phone_number_hint">ఉదా. 9876543210</string>
+    <string name="phone_btn_send_otp">OTP కోడ్‌ను పంపండి</string>
+    <string name="phone_invalid_number">దయచేసి చెల్లుబాటు అయ్యే 10-అంకెల మొబైల్ నంబర్‌ను నమోదు చేయండి.</string>
+    <string name="phone_sending_otp">OTP ధృవీకరణ కోడ్ పంపబడుతోంది…</string>
+
+    <!-- Verify OTP Screen -->
+    <string name="otp_title">OTP కోడ్‌ను ధృవీకరించండి</string>
+    <string name="otp_subtitle">%1$s కు పంపబడిన 6-అంకెల ధృవీకరణ కోడ్‌ను నమోదు చేయండి</string>
+    <string name="otp_label">6-అంకెల ధృవీకరణ కోడ్</string>
+    <string name="otp_btn_verify">ధృవీకరించి సైన్ ఇన్ చేయండి</string>
+    <string name="otp_verifying">OTP కోడ్ ధృవీకరించబడుతోంది…</string>
+    <string name="otp_resend_countdown">%1$d సెకన్లలో కోడ్‌ను మళ్లీ పంపవచ్చు</string>
+    <string name="otp_btn_resend">OTP మళ్లీ పంపండి</string>
+    <string name="otp_edit_phone">మొబైల్ నంబర్‌ను సవరించండి</string>
+
+    <!-- Profile Setup & Edit Strings -->
+    <string name="profile_setup_title">మీ ఆరోగ్య గుర్తింపును అమర్చండి</string>
+    <string name="profile_setup_subtitle">మీ వైద్య చరిత్రను అమర్చుకోవడానికి మీ వ్యక్తిగత ఆరోగ్య ప్రొఫైల్‌ను సృష్టించండి. మీ పేరు మాత్రమే తప్పనిసరి.</string>
+    <string name="profile_edit_title">రోగి ఆరోగ్య ప్రొఫైల్</string>
+    <string name="profile_sec_personal">వ్యక్తిగత వివరాలు</string>
+    <string name="profile_full_name_label">పూర్తి పేరు *</string>
+    <string name="profile_full_name_hint">ఉదా. అనన్య శర్మ</string>
+    <string name="profile_dob_label">పుట్టిన తేదీ (DD/MM/YYYY)</string>
+    <string name="profile_gender_label">లింగం</string>
+    <string name="profile_city_label">నగరం</string>
+    <string name="profile_state_label">రాష్ట్రం</string>
+    <string name="profile_language_label">ప్రాధాన్య భాష</string>
+    <string name="profile_verified_phone_label">ధృవీకరించబడిన ఖాతా ఫోన్ (చదవడానికి మాత్రమే)</string>
+    <string name="profile_change_photo">ఫోటో మార్చండి</string>
+
+    <string name="profile_sec_health">ప్రాథమిక ఆరోగ్య గుర్తింపు (ఐచ్ఛికం)</string>
+    <string name="profile_blood_group_label">రక్తం గ్రూప్</string>
+    <string name="profile_allergies_label">తెలిసిన అలర్జీలు</string>
+    <string name="profile_allergies_hint">ఉదా. పెన్సిలిన్, దుమ్ము, వేరుశనగ</string>
+    <string name="profile_conditions_label">ఉన్న ఆరోగ్య సమస్యలు</string>
+    <string name="profile_conditions_hint">ఉదా. అధిక రక్తపోటు, మధుమేహం, ఉబ్బసం</string>
+    <string name="profile_emergency_name_label">అత్యవసర పరిచయం పేరు</string>
+    <string name="profile_emergency_phone_label">అత్యవసర పరిచయం ఫోన్</string>
+    <string name="profile_notes_label">అదనపు గమనికలు</string>
+    <string name="profile_notes_hint">ఉదా. వైద్య పరికరాలు, ఆహార పరిమితులు</string>
+
+    <string name="profile_unverified_notice">ℹ️ ప్రాథమిక ఆరోగ్య సమాచారం రోగి అందించినది మరియు వైద్యపరంగా ధృవీకరించబడలేదు.</string>
+    <string name="profile_err_name_required">ఆరోగ్య ప్రొఫైల్‌ను సృష్టించడానికి పూర్తి పేరు తప్పనిసరి.</string>
+    <string name="profile_err_emergency_phone">దయచేసి చెల్లుబాటు అయ్యే సంఖ్యాత్మక అత్యవసర ఫోన్ నంబర్‌ను నమోదు చేయండి.</string>
+    <string name="profile_btn_save">ప్రొఫైల్‌ను సేవ్ చేయండి</string>
+    <string name="profile_btn_cancel">రద్దు చేయండి</string>
+    <string name="profile_btn_edit">ప్రొఫైల్‌ను సవరించండి</string>
+    <string name="profile_save_success">రోగి ప్రొఫైల్ విజయవంతంగా నవీకరించబడింది!</string>
+
+    <!-- Home Screen -->
+    <string name="home_greeting_default">శుభ దినం 👋</string>
+    <string name="home_greeting_user">శుభ దినం 👋, %1$s</string>
+    <string name="home_header_subtitle">మీ ఆరోగ్యం ఒక చూపులో</string>
+    <string name="home_card_title">పూర్తి ఆరోగ్య చరిత్ర</string>
+    <string name="home_card_desc">మీ వైద్య కాలక్రమాన్ని ఎల్లప్పుడూ మీతో ఉంచుకోవడానికి నివేదికలు, ప్రిస్క్రిప్షన్‌లు మరియు రోజువారీ మందులను జోడించండి.</string>
+    <string name="home_btn_add_record">ఆరోగ్య రికార్డును జోడించండి</string>
+    <string name="home_section_meds">నేటి మందులు</string>
+    <string name="home_empty_meds_title">ఈ రోజుకు మందులేవీ నిర్ణయించబడలేదు</string>
+    <string name="home_empty_meds_desc">మోతాదును ట్రాక్ చేయడానికి మీ ప్రిస్క్రిప్షన్‌లు లేదా రోజువారీ ప్రణాళిక నుండి మందులను జోడించండి.</string>
+    <string name="home_section_reports">ఇటీవల జోడించిన వైద్య రికార్డులు</string>
+    <string name="home_empty_reports_title">ఇంకా ఆరోగ్య రికార్డులేవీ లేవు</string>
+    <string name="home_empty_reports_desc">మీ ఆరోగ్య చరిత్రను నిర్మించడానికి మీ మొదటి వైద్య రికార్డును జోడించండి లేదా ల్యాబ్ నివేదికలను అప్‌లోడ్ చేయండి.</string>
+    <string name="home_section_trends">ఆరోగ్య ట్రెండ్స్ &amp; కాలక్రమం</string>
+    <string name="home_empty_trends_title">ఆరోగ్య ట్రెండ్స్ అందుబాటులో లేవు</string>
+    <string name="home_empty_trends_desc">రికార్డులను జోడించిన తర్వాత ల్యాబ్ విలువలు, ప్రాణ సూచికలు మరియు ఆరోగ్య ట్రెండ్‌లు స్వయంచాలకంగా కనిపిస్తాయి.</string>
+
+    <!-- Records Screen Placeholder -->
+    <string name="records_title">వైద్య రికార్డులు</string>
+    <string name="records_subtitle">ల్యాబ్ నివేదికలు, ప్రిస్క్రిప్షన్‌లు మరియు డిశ్చార్జి సారాంశాల ప్రధాన ఆర్కైవ్</string>
+    <string name="records_empty_title">ఇంకా రికార్డులేవీ ఆర్కైవ్ చేయబడలేదు</string>
+    <string name="records_empty_desc">మీ పరికరంలో పూర్తి ఆరోగ్య చరిత్రను నిర్మించడానికి వైద్య పత్రాలను స్కాన్ చేయండి లేదా దిగుమతి చేయండి.</string>
+    <string name="records_btn_upload">రికార్డును జోడించండి</string>
+
+    <!-- Trends Screen Placeholder -->
+    <string name="trends_title">ఆరోగ్య ట్రెండ్స్</string>
+    <string name="trends_subtitle">మీ ల్యాబ్ నివేదికలు &amp; వైటల్స్ నుండి సేకరించిన విశ్లేషణలు</string>
+    <string name="trends_tab_labs">ల్యాబ్ ట్రెండ్స్</string>
+    <string name="trends_tab_vitals">వైటల్స్ ట్రెండ్స్</string>
+    <string name="trends_tab_adherence">మందుల పాటించడం</string>
+    <string name="trends_empty_labs_title">ల్యాబ్ ట్రెండ్స్ నమోదు కాలేదు</string>
+    <string name="trends_empty_labs_desc">రక్తంలో గ్లూకోజ్, హిమోగ్లోబిన్ మరియు లిపిడ్ ప్రొఫైల్ వంటి ల్యాబ్ సూచికలు ట్రాక్ చేయబడతాయి.</string>
+    <string name="trends_empty_vitals_title">వైటల్స్ ట్రెండ్స్ నమోదు కాలేదు</string>
+    <string name="trends_empty_vitals_desc">రక్తపోటు, గుండె కొట్టుకునే వేగం మరియు ఉష్ణోగ్రత లాగ్‌లు ఇక్కడ కనిపిస్తాయి.</string>
+    <string name="trends_empty_adherence_title">మందుల వాడకం చరిత్ర లేదు</string>
+    <string name="trends_empty_adherence_desc">రోజువారీ మందుల వాడకాన్ని నమోదు చేయడం ద్వారా మందుల వాడకం గణాంకాలు ఏర్పడతాయి.</string>
+
+    <!-- Medicines Screen Placeholder -->
+    <string name="meds_title">మందులు</string>
+    <string name="meds_subtitle">రోజువారీ మోతాదు, ప్రిస్క్రిప్షన్‌లు మరియు సమయ పట్టికను ట్రాక్ చేయండి</string>
+    <string name="meds_btn_add">మందును జోడించండి</string>
+    <string name="meds_btn_reminders">జ్ఞప్తిపత్రాలు</string>
+    <string name="meds_section_schedule">నేటి ప్రణాళిక</string>
+    <string name="meds_empty_schedule_title">ఇంకా మందులేవీ జోడించబడలేదు</string>
+    <string name="meds_empty_schedule_desc">మందులను మానవీయంగా జోడించండి లేదా స్కాన్ చేసిన ప్రిస్క్రిప్షన్‌ల నుండి నేరుగా సేకరించండి.</string>
+    <string name="meds_section_history">మందుల చరిత్ర &amp; పాటించడం</string>
+    <string name="meds_empty_history_title">మందుల వాడకం చరిత్ర లేదు</string>
+    <string name="meds_empty_history_desc">రోజువారీ మందుల వాడకం లాగ్‌లు మీ మందుల వాడకం చరిత్రను పూరిస్తాయి.</string>
+
+    <!-- Me / Profile Screen -->
+    <string name="me_profile_default">రోగి ప్రొఫైల్</string>
+    <string name="me_profile_tagline">వ్యక్తిగత ఆరోగ్య రికార్డు</string>
+    <string name="me_sec_records">ఆరోగ్య రికార్డులు &amp; పత్రాలు</string>
+    <string name="me_item_history_title">వైద్య రికార్డుల చరిత్ర</string>
+    <string name="me_item_history_sub">వివరమైన వైద్య నివేదికలు మరియు పత్రాలను చూడండి</string>
+    <string name="me_item_rx_title">ప్రిస్క్రిప్షన్‌లు</string>
+    <string name="me_item_rx_sub">ప్రిస్క్రిప్షన్ పత్రాలు మరియు మోతాదు జాబితాలు</string>
+    <string name="me_sec_privacy">గోప్యత, భద్రత &amp; ఖాతా</string>
+    <string name="me_item_privacy_title">గోప్యత &amp; భద్రతా నియంత్రణలు</string>
+    <string name="me_item_privacy_sub">మీ పరికరంలోనే ఆరోగ్య సమాచార నిల్వ &amp; నియంత్రణ</string>
+    <string name="me_item_export_title">ఎగుమతి &amp; నియంత్రిత భాగస్వామ్యం</string>
+    <string name="me_item_export_sub">ఆరోగ్య సారాంశాన్ని రూపొందించండి లేదా సురక్షితంగా పంచుకోండి</string>
+    <string name="me_item_sign_out_title">సైన్ అవుట్</string>
+    <string name="me_item_sign_out_sub">ఈ పరికరంలో ఫైర్‌బేస్ ఖాతా నుండి సైన్ అవుట్ చేయండి</string>
+    <string name="me_sec_config">యాప్ అమరికలు &amp; భాష</string>
+    <string name="me_item_language_title">యాప్ భాష</string>
+    <string name="me_item_language_sub">తెలుగు (English మరియు Hindi సిద్ధంగా ఉన్నాయి)</string>
+    <string name="me_item_settings_title">సెట్టింగ్‌లు</string>
+    <string name="me_item_settings_sub">యాప్ థీమ్, నోటిఫికేషన్ ప్రాధాన్యతలు &amp; నిల్వ</string>
+    <string name="me_delete_account_title">ఖాతా &amp; ఆరోగ్య సమాచారాన్ని తొలగించండి</string>
+
+    <!-- Review Screen -->
+    <string name="review_doc_title">పత్రం సమీక్ష</string>
+    <string name="review_add_field">ఫీల్డ్‌ను జోడించండి</string>
+
+    <!-- Common UI Strings -->
+    <string name="common_retry">మళ్లీ ప్రయత్నించండి</string>
+    <string name="common_back">వెనుకకు</string>
+    <string name="common_coming_soon">ఈ సౌలభ్యం తదుపరి దశలో రాబోతోంది</string>
+    <string name="common_close">మూసివేయండి</string>
+    <string name="common_cancel">రద్దు చేయండి</string>
+    <string name="export_report_btn_generate">PDFని రూపొందించి పంచుకోండి</string>
+    <string name="export_report_btn_print">పత్రాన్ని ముద్రించండి</string>
+    <string name="export_report_btn_share">వైద్యునితో పంచుకోండి</string>
+    <string name="export_report_btn_view">PDF నివేదికను వీక్షించండి</string>
+    <string name="export_report_card_desc">మీ క్రియాశీల ప్రిస్క్రిప్షన్‌లు, వైద్య చరిత్ర, ల్యాబ్ విలువలు మరియు వైటల్స్‌తో కూడిన సమగ్ర ముద్రణా నివేదికను రూపొందించండి.</string>
+    <string name="export_report_dialog_body">ఇది మీ ప్రొఫైల్, మందులు, ఇటీవలి వైటల్స్ మరియు వైద్యుల సమీక్ష కోసం సిద్ధం చేసిన ల్యాబ్ ఫలితాలతో అధికారిక వైద్య సారాంశాన్ని రూపొందిస్తుంది.</string>
+    <string name="export_report_dialog_header">డాక్టర్ క్లినికల్ సారాంశ నివేదిక</string>
+    <string name="export_report_error">PDF నివేదికను రూపొందించడం విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి.</string>
+    <string name="export_report_generating">క్లినికల్ వైద్య నివేదిక PDF సిద్ధమవుతోంది…</string>
+    <string name="export_report_subtitle">ఆరోగ్య నిపుణుల కోసం క్లినికల్ సారాంశం &amp; మందుల పట్టిక</string>
+    <string name="export_report_success">వైద్య నివేదిక విజయవంతంగా రూపొందించబడింది!</string>
+    <string name="export_report_title">వైద్య PDF నివేదికను ఎగుమతి చేయండి</string>
+    <string name="home_ai_analyzing">ఆరోగ్య విశ్లేషణ సిద్ధమవుతోంది…</string>
+    <string name="home_ai_badge_active">AI చురుకుగా ఉంది</string>
+    <string name="home_ai_badge_inactive">ప్రామాణికం</string>
+    <string name="home_ai_chip_brief">డాక్టర్ సందర్శన వివరాలు</string>
+    <string name="home_ai_chip_explainer">ల్యాబ్ వివరణ</string>
+    <string name="home_ai_chip_interaction">మందుల భద్రత</string>
+    <string name="home_ai_dialog_close">మూసివేయండి</string>
+    <string name="home_ai_dialog_copied">సారాంశం క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది!</string>
+    <string name="home_ai_dialog_copy">క్లిప్‌బోర్డ్‌కు కాపీ చేయండి</string>
+    <string name="home_ai_pill_attention">శ్రద్ధ అవసరం</string>
+    <string name="home_ai_pill_optimal">ఉత్తమ రక్షణ</string>
+    <string name="home_ai_pill_stable">స్థిరంగా &amp; పర్యవేక్షణలో ఉంది</string>
+    <string name="home_ai_refresh">రిఫ్రెష్ చేయండి</string>
+    <string name="home_ai_score_desc">మందుల క్రమం మరియు వైద్య పత్రాల ఆధారంగా లెక్కించబడింది</string>
+    <string name="home_ai_score_label">ఆరోగ్య స్థిరత్వ సూచిక</string>
+    <string name="home_ai_sec_actions">AI సంరక్షణ మార్గదర్శకత్వం</string>
+    <string name="home_ai_sec_observations">ముఖ్యమైన క్లినికల్ అంతర్దృష్టులు</string>
+    <string name="home_ai_summary_heading">AI ఆరోగ్య మేధస్సు</string>
+    <string name="home_ai_summary_subheading">పత్రాల ఆధారంగా స్వయంకృత విశ్లేషణ</string>
+    <string name="home_ai_toggle_desc">పత్రాల ఆధారిత సంరక్షణ సారాంశం &amp; భద్రతా తనిఖీ</string>
+    <string name="home_ai_toggle_label">AI సహాయం</string>
+    <string name="home_infographic_badge">బయోమెట్రిక్ HUD // 3D</string>
+    <string name="home_infographic_status">బయోమెట్రిక్ టెలిమెట్రీ &amp; క్లినికల్ మ్యాపింగ్</string>
+    <string name="home_infographic_title">బయోమెట్రిక్ హెల్త్ మోడల్</string>
+    <string name="home_no_medicine_scheduled">ఈ రోజుకు మందులేవీ నిర్ణయించబడలేదు</string>
+    <string name="meds_reminders_btn_grant">అనుమతి ఇవ్వండి</string>
+    <string name="meds_reminders_btn_sync">అన్నింటినీ రీ-సింక్ చేయండి</string>
+    <string name="meds_reminders_btn_test">పరీక్ష అలారం పంపండి</string>
+    <string name="meds_reminders_notif_disabled">నోటిఫికేషన్‌లు నిలిపివేయబడ్డాయి</string>
+    <string name="meds_reminders_notif_enabled">నోటిఫికేషన్‌లు చురుకుగా ఉన్నాయి</string>
+    <string name="meds_reminders_subtitle">సమయానికి రోజువారీ మందుల హెచ్చరికలు పొందండి</string>
+    <string name="meds_reminders_sync_success">అన్ని అలారాలు రీ-షెడ్యూల్ చేయబడ్డాయి</string>
+    <string name="meds_reminders_test_success">పరీక్ష హెచ్చరిక పంపబడింది!</string>
+    <string name="meds_reminders_title">మందుల జ్ఞాపికలు &amp; అలారాలు</string>
+    <string name="meds_edit_reminder_title">మందుల జ్ఞాపికను సవరించండి</string>
+    <string name="meds_edit_time_label">జ్ఞాపిక సమయం</string>
+    <string name="meds_custom_time_label">అనుకూల సమయం</string>
+    <string name="meds_edit_btn">సవరించండి</string>
+    <string name="meds_save_reminder">మార్పులను సేవ్ చేయండి</string>
+    <string name="meds_quick_slots">త్వరిత షెడ్యూల్ స్లాట్‌లు</string>
+    <string name="meds_time_updated">జ్ఞాపిక సమయం నవీకరించబడింది</string>
+    <string name="symptoms_btn_log">లక్షణాలు నమోదు చేయండి</string>
+    <string name="symptoms_btn_save">లక్షణం సేవ్ చేయండి</string>
+    <string name="symptoms_dialog_subtitle">తీవ్రత, గమనికలు మరియు వ్యవధిని రికార్డ్ చేయండి</string>
+    <string name="symptoms_dialog_title">ఆరోగ్య లక్షణాన్ని నమోదు చేయండి</string>
+    <string name="symptoms_empty_desc">మీ ఆరోగ్య నమూనాలను ట్రాక్ చేయడానికి కొత్త లక్షణాలను జోడించండి.</string>
+    <string name="symptoms_empty_title">ఇంకా లక్షణాలు నమోదు కాలేదు</string>
+    <string name="symptoms_label_duration">వ్యవధి (ఉదా. 2 గంటలు)</string>
+    <string name="symptoms_label_name">లక్షణం పేరు</string>
+    <string name="symptoms_label_notes">అదనపు గమనికలు</string>
+    <string name="symptoms_label_severity">తీవ్రత స్థాయి</string>
+    <string name="symptoms_label_triggers">ప్రేరకాలు (ఐచ్ఛికం)</string>
+    <string name="symptoms_severity_critical">చాలా తీవ్రమైనది</string>
+    <string name="symptoms_severity_mild">తేలికపాటి</string>
+    <string name="symptoms_severity_moderate">మితమైన</string>
+    <string name="symptoms_severity_severe">తీవ్రమైన</string>
+    <string name="symptoms_subtitle">తీవ్రత నమూనాలు మరియు కాలక్రమ మార్పులు</string>
+    <string name="symptoms_title">లక్షణాల ట్రెండ్స్ &amp; లాగ్స్</string>
+    <string name="trends_compare_subtitle">రెండు ఆరోగ్య కొలతలను పోల్చండి</string>
+    <string name="trends_compare_title">ద్వంద్వ కొలత పోలిక</string>
+    <string name="trends_metric_1_label">కొలత 1</string>
+    <string name="trends_metric_2_label">కొలత 2</string>
+    <string name="trends_tab_compare">పోలిక</string>
+    <string name="trends_tab_symptoms">లక్షణాలు</string>
+    <string name="vitals_avg">సగటు</string>
+    <string name="vitals_btn_log">వైటల్స్ లాగ్ చేయండి</string>
+    <string name="vitals_chart_subtitle">గత రీడింగ్‌ల ఆధారంగా ఆరోగ్య మార్పులు</string>
+    <string name="vitals_chart_title">వైటల్స్ &amp; హెల్త్ ట్రెండ్స్</string>
+    <string name="vitals_dialog_cancel">రద్దు చేయండి</string>
+    <string name="vitals_dialog_diastolic">డయాస్టోలిక్ (దిగువ సంఖ్య)</string>
+    <string name="vitals_dialog_notes">వైద్య గమనికలు (ఐచ్ఛికం)</string>
+    <string name="vitals_dialog_save">రీడింగ్ సేవ్ చేయండి</string>
+    <string name="vitals_dialog_systolic">సిస్టోలిక్ (ఎగువ సంఖ్య)</string>
+    <string name="vitals_dialog_title">వైటల్ రీడింగ్‌ను నమోదు చేయండి</string>
+    <string name="vitals_dialog_weight">బరువు (కిలోగ్రాములలో)</string>
+    <string name="vitals_empty_chart">చార్ట్ ప్రదర్శించడానికి కనీసం 2 రీడింగ్‌లు అవసరం.</string>
+    <string name="vitals_latest">ఇటీవలి</string>
+    <string name="vitals_legend_diastolic">డయాస్టోలిక్</string>
+    <string name="vitals_legend_systolic">సిస్టోలిక్</string>
+    <string name="vitals_legend_weight">బరువు</string>
+    <string name="vitals_metric_bp">రక్తపోటు (BP)</string>
+    <string name="vitals_metric_weight">శరీర బరువు</string>
+    <string name="vitals_range">శ్రేణి</string>
+    <string name="vitals_ref_bp">లక్ష్యం: &lt; 120/80 mmHg</string>
+    <string name="vitals_ref_weight">ఆరోగ్యకరమైన BMI శ్రేణి</string>
+    <string name="vitals_status_elevated">పెరిగినది</string>
+    <string name="vitals_status_normal">సాధారణం</string>
+    <string name="vitals_status_optimal">ఉత్తమం</string>
+    <string name="vitals_unit_bp">mmHg</string>
+    <string name="vitals_unit_weight">kg</string>
+
+    <!-- AI Assist Scope Options Strings -->
+    <string name="home_ai_opt_total_health">సంపూర్ణ ఆరోగ్య సారాంశం</string>
+    <string name="home_ai_opt_total_health_sub">అన్ని నివేదికలు మరియు క్లినికల్ సమాచారం ఆధారంగా పూర్తి సారాంశం</string>
+    <string name="home_ai_opt_each_report">అప్‌లోడ్ చేసిన నివేదికలు</string>
+    <string name="home_ai_opt_each_report_count">నివేదిక: %1$s</string>
+    <string name="home_ai_opt_select_report">వ్యక్తిగత కొలతల సారాంశం చూడటానికి క్రింది నివేదికను ఎంచుకోండి</string>
+    <string name="home_ai_report_findings_title">నివేదిక ఫలితాలు &amp; బయోమార్కర్లు</string>
+    <string name="home_ai_report_abnormal_warning">%1$d కొలతలు సాధారణ పరిధికి భిన్నంగా ఉన్నాయి</string>
+    <string name="home_ai_report_normal_status">అన్ని కొలతలు సాధారణ పరిధిలోనే ఉన్నాయి</string>
+    <string name="home_ai_report_questions_title">ఈ నివేదిక గురించి వైద్యుడిని అడగవలసిన ప్రశ్నలు</string>
+    <string name="home_ai_report_date_label">నివేదిక తేదీ: %1$s</string>
+    <string name="home_ai_report_lab_label">ల్యాబ్ / క్లినిక్: %1$s</string>
+    <string name="home_ai_report_no_reports">ఇంకా నివేదికలు అప్‌లోడ్ చేయలేదు</string>
+    <string name="home_ai_report_no_reports_sub">నివేదిక-నిర్దిష్ట AI సారాంశాల కోసం ల్యాబ్ రిపోర్ట్ లేదా ప్రిస్క్రిప్షన్‌ను అప్‌లోడ్ చేయండి</string>
+</resources>

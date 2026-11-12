@@ -1,0 +1,212 @@
+<resources>
+    <string name="app_name">AbhayHealth</string>
+    <string name="app_tagline">Your Health Journey, Connected.</string>
+
+    <!-- Navigation Labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_records">Records</string>
+    <string name="nav_trends">Trends</string>
+    <string name="nav_medicines">Medicines</string>
+    <string name="nav_me">Me</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_loading">Initializing your secure health environment…</string>
+
+    <!-- Onboarding Screen -->
+    <string name="onboarding_welcome">Welcome to AbhayHealth</string>
+    <string name="onboarding_subtitle">Your Health Journey, Connected.</string>
+    <string name="onboarding_feat_records_title">Organized Medical Records</string>
+    <string name="onboarding_feat_records_desc">Keep your medical reports, scans, and lab results structured in one local-first application.</string>
+    <string name="onboarding_feat_meds_title">Medication &amp; Prescription Tracker</string>
+    <string name="onboarding_feat_meds_desc">Manage prescriptions, track daily medicine dosage, and receive timely intake reminders.</string>
+    <string name="onboarding_feat_privacy_title">Private &amp; Local-First</string>
+    <string name="onboarding_feat_privacy_desc">Your health data remains on your phone, completely private and securely stored under your control.</string>
+    <string name="onboarding_name_label">Your Name (Optional)</string>
+    <string name="onboarding_name_placeholder">e.g. Ananya Sharma</string>
+    <string name="onboarding_get_started">Get Started</string>
+
+    <!-- Welcome / Account Entry Screen -->
+    <string name="welcome_title">Sign in to AbhayHealth</string>
+    <string name="welcome_desc">Secure account access via mobile OTP. Your medical records remain stored locally on your device.</string>
+    <string name="welcome_btn_continue">Continue with Mobile Number</string>
+    <string name="welcome_privacy_notice">🔒 Account authentication verifies your mobile identity. Your personal health documents, medical records, and prescriptions remain 100% stored on your device.</string>
+
+    <!-- Enter Phone Screen -->
+    <string name="phone_title">Enter Mobile Number</string>
+    <string name="phone_subtitle">We will send a 6-digit OTP code to verify your mobile number.</string>
+    <string name="phone_country_label">Country Code</string>
+    <string name="phone_number_label">Mobile Number</string>
+    <string name="phone_number_hint">e.g. 9876543210</string>
+    <string name="phone_btn_send_otp">Send OTP Code</string>
+    <string name="phone_invalid_number">Please enter a valid 10-digit mobile number.</string>
+    <string name="phone_sending_otp">Sending OTP verification code…</string>
+
+    <!-- Verify OTP Screen -->
+    <string name="otp_title">Verify OTP Code</string>
+    <string name="otp_subtitle">Enter the 6-digit verification code sent to %1$s</string>
+    <string name="otp_label">6-Digit Verification Code</string>
+    <string name="otp_btn_verify">Verify &amp; Sign In</string>
+    <string name="otp_verifying">Verifying OTP code…</string>
+    <string name="otp_resend_countdown">Resend code in %1$ds</string>
+    <string name="otp_btn_resend">Resend OTP</string>
+    <string name="otp_edit_phone">Edit Mobile Number</string>
+
+    <!-- Profile Setup & Edit Strings -->
+    <string name="profile_setup_title">Set Up Your Health Identity</string>
+    <string name="profile_setup_subtitle">Create your personal health profile to organize your medical history. Only your name is required.</string>
+    <string name="profile_edit_title">Patient Health Profile</string>
+    <string name="profile_sec_personal">Personal Details</string>
+    <string name="profile_full_name_label">Full Name *</string>
+    <string name="profile_full_name_hint">e.g. Ananya Sharma</string>
+    <string name="profile_dob_label">Date of Birth (DD/MM/YYYY)</string>
+    <string name="profile_gender_label">Gender</string>
+    <string name="profile_city_label">City</string>
+    <string name="profile_state_label">State</string>
+    <string name="profile_language_label">Preferred Language</string>
+    <string name="profile_verified_phone_label">Verified Account Phone (Read-Only)</string>
+    <string name="profile_change_photo">Change Photo</string>
+
+    <string name="profile_sec_health">Baseline Health Identity (Optional)</string>
+    <string name="profile_blood_group_label">Blood Group</string>
+    <string name="profile_allergies_label">Known Allergies</string>
+    <string name="profile_allergies_hint">e.g. Penicillin, Dust, Peanuts</string>
+    <string name="profile_conditions_label">Existing Health Conditions</string>
+    <string name="profile_conditions_hint">e.g. Hypertension, Diabetes, Asthma</string>
+    <string name="profile_emergency_name_label">Emergency Contact Name</string>
+    <string name="profile_emergency_phone_label">Emergency Contact Phone</string>
+    <string name="profile_notes_label">Additional Patient Notes</string>
+    <string name="profile_notes_hint">e.g. Medical devices, dietary restrictions</string>
+
+    <string name="profile_unverified_notice">ℹ️ Baseline health information is patient-provided for personal organization and is not medically verified.</string>
+    <string name="profile_err_name_required">Full name is required to create a health profile.</string>
+    <string name="profile_err_emergency_phone">Please enter a valid numeric emergency contact phone number.</string>
+    <string name="profile_btn_save">Save Profile</string>
+    <string name="profile_btn_cancel">Cancel</string>
+    <string name="profile_btn_edit">Edit Profile</string>
+    <string name="profile_save_success">Patient profile updated successfully!</string>
+
+    <!-- Home Screen -->
+    <string name="home_greeting_default">Good day 👋</string>
+    <string name="home_greeting_user">Good day 👋, %1$s</string>
+    <string name="home_header_subtitle">Your health at a glance</string>
+    <string name="home_card_title">Longitudinal Health History</string>
+    <string name="home_card_desc">Add reports, prescriptions, and daily medicines to keep your medical timeline always with you.</string>
+    <string name="home_btn_add_record">Add Health Record</string>
+    <string name="home_section_meds">Today\'s Medications</string>
+    <string name="home_empty_meds_title">No medicines scheduled for today</string>
+    <string name="home_empty_meds_desc">Add medicines from your prescriptions or daily schedule to track dosage.</string>
+    <string name="home_section_reports">Recent Medical Records</string>
+    <string name="home_empty_reports_title">No health records yet</string>
+    <string name="home_empty_reports_desc">Add your first medical record or upload lab reports to build your health history.</string>
+    <string name="home_section_trends">Health Trends &amp; Timeline</string>
+    <string name="home_empty_trends_title">No health trends available</string>
+    <string name="home_empty_trends_desc">Lab values, vital signs, and health trends will automatically appear after adding records.</string>
+
+    <!-- Records Screen Placeholder -->
+    <string name="records_title">Medical Records</string>
+    <string name="records_subtitle">Your central archive for lab reports, prescriptions, and discharge summaries</string>
+    <string name="records_empty_title">No records archived yet</string>
+    <string name="records_empty_desc">Scan or import medical documents to build a complete longitudinal health history on your device.</string>
+    <string name="records_btn_upload">Add Record</string>
+
+    <!-- Trends Screen Placeholder -->
+    <string name="trends_title">Health Trends</string>
+    <string name="trends_subtitle">Longitudinal analytics extracted from your lab reports &amp; vitals</string>
+    <string name="trends_tab_labs">Lab Trends</string>
+    <string name="trends_tab_vitals">Vital Trends</string>
+    <string name="trends_tab_adherence">Medication Adherence</string>
+    <string name="trends_empty_labs_title">No Lab Trends Recorded</string>
+    <string name="trends_empty_labs_desc">Lab indicators like Blood Glucose, Hemoglobin, and Lipid Profile will be tracked across visits.</string>
+    <string name="trends_empty_vitals_title">No Vital Trends Recorded</string>
+    <string name="trends_empty_vitals_desc">Blood pressure, heart rate, and temperature logs will appear here.</string>
+    <string name="trends_empty_adherence_title">No Adherence History</string>
+    <string name="trends_empty_adherence_desc">Logging daily medicine intake generates adherence statistics over time.</string>
+
+    <!-- Medicines Screen Placeholder -->
+    <string name="meds_title">Medicines</string>
+    <string name="meds_subtitle">Track daily dosage, prescriptions, and intake schedules</string>
+    <string name="meds_btn_add">Add Medicine</string>
+    <string name="meds_btn_reminders">Reminders</string>
+    <string name="meds_section_schedule">Today\'s Schedule</string>
+    <string name="meds_empty_schedule_title">No medicines added yet</string>
+    <string name="meds_empty_schedule_desc">Add medicines manually or extract them directly from your scanned prescriptions.</string>
+    <string name="meds_section_history">Medication History &amp; Adherence</string>
+    <string name="meds_empty_history_title">No adherence history</string>
+    <string name="meds_empty_history_desc">Daily intake logs will populate your medication adherence history.</string>
+
+    <!-- Me / Profile Screen -->
+    <string name="me_profile_default">Patient Profile</string>
+    <string name="me_profile_tagline">Personal Longitudinal Health Record</string>
+    <string name="me_sec_records">Health Records &amp; Documents</string>
+    <string name="me_item_history_title">Medical Records History</string>
+    <string name="me_item_history_sub">View structured medical reports and documents</string>
+    <string name="me_item_rx_title">Prescriptions</string>
+    <string name="me_item_rx_sub">Prescription documents and dosage lists</string>
+    <string name="me_sec_privacy">Privacy, Security &amp; Account</string>
+    <string name="me_item_privacy_title">Privacy &amp; Security Controls</string>
+    <string name="me_item_privacy_sub">Local-first health data storage &amp; device access control</string>
+    <string name="me_item_export_title">Export &amp; Controlled Sharing</string>
+    <string name="me_item_export_sub">Generate health summary or share records securely</string>
+    <string name="me_item_sign_out_title">Sign Out</string>
+    <string name="me_item_sign_out_sub">Sign out from Firebase account on this device</string>
+    <string name="me_sec_config">App Configuration &amp; Language</string>
+    <string name="me_item_language_title">App Language</string>
+    <string name="me_item_language_sub">English (Telugu and Hindi ready)</string>
+    <string name="me_item_settings_title">Settings</string>
+    <string name="me_item_settings_sub">App theme, notification preferences &amp; storage</string>
+
+    <!-- Common UI Strings -->
+    <string name="common_retry">Retry</string>
+    <string name="common_back">Back</string>
+    <string name="common_coming_soon">Feature coming in a future phase</string>
+    <string name="common_close">Close</string>
+
+    <!-- PDF Report Export Strings -->
+    <string name="export_report_title">Export Medical PDF Report</string>
+    <string name="export_report_subtitle">Clinical summary &amp; medication schedule for healthcare providers</string>
+    <string name="export_report_card_desc">Generate a comprehensive, printable PDF report containing your active prescriptions, medical history, lab values, and vitals.</string>
+    <string name="export_report_btn_generate">Generate &amp; Share PDF</string>
+    <string name="export_report_btn_share">Share with Healthcare Provider</string>
+    <string name="export_report_btn_view">View PDF Report</string>
+    <string name="export_report_btn_print">Print Document</string>
+    <string name="export_report_generating">Generating clinical medical report PDF…</string>
+    <string name="export_report_success">Medical report generated successfully!</string>
+    <string name="export_report_error">Failed to generate PDF report. Please try again.</string>
+    <string name="export_report_dialog_header">Doctor Clinical Summary Report</string>
+    <string name="export_report_dialog_body">This generates an official AbhayHealth Medical Summary including your profile, active prescriptions, recent vitals, and diagnostic lab results formatted for physician review.</string>
+
+    <!-- Symptom Tracking & Logging Strings -->
+    <string name="trends_tab_symptoms">Symptoms</string>
+    <string name="symptoms_title">Symptom Trends &amp; Logs</string>
+    <string name="symptoms_subtitle">Longitudinal severity patterns &amp; daily health journal</string>
+    <string name="symptoms_btn_log">+ Log Symptom</string>
+    <string name="symptoms_dialog_title">Log Daily Symptom</string>
+    <string name="symptoms_dialog_subtitle">Record symptom intensity, triggers, and notes</string>
+    <string name="symptoms_empty_title">No symptoms recorded yet</string>
+    <string name="symptoms_empty_desc">Track daily symptoms, severity levels, and triggers to analyze health patterns with your doctor.</string>
+    <string name="symptoms_severity_mild">Mild</string>
+    <string name="symptoms_severity_moderate">Moderate</string>
+    <string name="symptoms_severity_severe">Severe</string>
+    <string name="symptoms_severity_critical">Critical</string>
+    <string name="symptoms_label_name">Symptom Name</string>
+    <string name="symptoms_label_severity">Severity Level</string>
+    <string name="symptoms_label_triggers">Triggers &amp; Context</string>
+    <string name="symptoms_label_duration">Duration</string>
+    <string name="symptoms_label_notes">Notes &amp; Observations</string>
+    <string name="symptoms_btn_save">Save to Database</string>
+
+    <!-- AI Assist Scope Options Strings -->
+    <string name="home_ai_opt_total_health">Total Health Summary</string>
+    <string name="home_ai_opt_total_health_sub">Complete summary across all reports &amp; clinical data</string>
+    <string name="home_ai_opt_each_report">Uploaded Reports</string>
+    <string name="home_ai_opt_each_report_count">Report: %1$s</string>
+    <string name="home_ai_opt_select_report">Select a report below to summarize its individual metrics</string>
+    <string name="home_ai_report_findings_title">Report Findings &amp; Biomarkers</string>
+    <string name="home_ai_report_abnormal_warning">%1$d markers out of standard range</string>
+    <string name="home_ai_report_normal_status">All markers within normal range</string>
+    <string name="home_ai_report_questions_title">Doctor Questions For This Report</string>
+    <string name="home_ai_report_date_label">Report Date: %1$s</string>
+    <string name="home_ai_report_lab_label">Lab / Clinic: %1$s</string>
+    <string name="home_ai_report_no_reports">No uploaded reports yet</string>
+    <string name="home_ai_report_no_reports_sub">Upload a lab report or prescription to view report-specific AI summaries</string>
+</resources>

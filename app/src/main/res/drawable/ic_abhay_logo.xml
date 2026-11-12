@@ -1,0 +1,40 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- AbhayHealth Official Brand Emblem: Dark Slate Teal Base + Glowing Ring + Shield + Cross + Vital Heartbeat Pulse -->
+    <!-- Base Rounded Background -->
+    <path
+        android:fillColor="#0D3B4C"
+        android:pathData="M0,0h108v108h-108z" />
+
+    <!-- Ambient Glowing Circle (Jade/Teal Accent) -->
+    <path
+        android:fillColor="#14B8A6"
+        android:fillAlpha="0.22"
+        android:pathData="M54,16 C74.987,16 92,33.013 92,54 C92,74.987 74.987,92 54,92 C33.013,92 16,74.987 16,54 C16,33.013 33.013,16 54,16 Z" />
+
+    <!-- Protective Outer Shield Contour (Soft Pearl White) -->
+    <path
+        android:fillColor="#F0FDF4"
+        android:pathData="M54,26 C66,26 76,30 76,30 C76,54 68,68 54,78 C40,68 32,54 32,30 C32,30 42,26 54,26 Z" />
+
+    <!-- Inner Medical Cross Vertical Stem -->
+    <path
+        android:fillColor="#0D3B4C"
+        android:pathData="M50,38 h8 v24 h-8 z" />
+
+    <!-- Inner Medical Cross Horizontal Bar -->
+    <path
+        android:fillColor="#0D3B4C"
+        android:pathData="M42,46 h24 v8 h-24 z" />
+
+    <!-- Continuous Vital Heartbeat Pulse Line -->
+    <path
+        android:strokeColor="#0D9488"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M38,50 L46,50 L49,43 L52,57 L55,47 L58,50 L68,50" />
+</vector>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Exclude local medical documents, database, and preferences from cloud backup -->
+        <exclude domain="file" path="medical_records" />
+        <exclude domain="database" path="medical_records.db" />
+        <exclude domain="sharedpref" path="abhay_health_preferences.preferences_pb" />
+    </cloud-backup>
+    <device-transfer>
+        <!-- Allow local device-to-device transfer when patient migrates to a new phone -->
+        <include domain="file" path="medical_records" />
+        <include domain="database" path="medical_records.db" />
+    </device-transfer>
+</data-extraction-rules>

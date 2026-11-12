@@ -1,0 +1,8 @@
+{
+  "name": "AbhayHealth",
+  "description": "Your longitudinal health journey, medical records, and medication tracker.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
